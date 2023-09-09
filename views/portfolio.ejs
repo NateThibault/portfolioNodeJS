@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head'); %>
+    <title>Mes projets</title>
+  </head>
+  <body class="container" >
+    <header>
+      <%- include('./header'); %>
+    </header>
+    <main>
+      <div class="jumbotron bg-dark text-white">  
+        <h1><u>Mes projets</h1></u><br>
+        <ul>
+          <% for(let i=0; i<projects.length; i++) { %>
+            <li class="list-unstyled border-top border-2"><br>
+              <a href="/portfolio/<%= projects[i].id %>" class="text-white text-decoration-none ">
+                <h2><%= projects[i].title %></h2><br>
+                <img src="<%= projects[i].image %>" width="70%" class="rounded">
+                <p class="fst-italic"><%= projects[i].description %></p><br>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <%- include('./footer'); %>
+    </footer>
+  </body>
+</html>
